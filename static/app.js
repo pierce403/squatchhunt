@@ -39,12 +39,13 @@ function handleAuth(accountAddress, signature)
 
 ethereum.enable().then(function () {
 
+    console.log("enabling web3")
     provider = new ethers.providers.Web3Provider(web3.currentProvider);
 
-
+    
     provider.getNetwork().then(function (result) {
         if (result['chainId'] != 1) {
-            document.getElementById("msg").textContent = 'Switch to Mainnet!';
+            document.getElementById("msg").textContent = 'Switch to Mainnet! '+result['chainId'];
 
         } else { // okay, confirmed we're on mainnet
 

@@ -56,7 +56,7 @@ ethereum.enable().then(function () {
                 provider.getBalance(String(result[0])).then(function (balance) {
                     var myBalance = (balance / ethers.constants.WeiPerEther).toFixed(4);
                     console.log("Your Balance: " + myBalance);
-                    document.getElementById("msg").textContent = 'ETH Balance: ' + myBalance;
+                    document.getElementById("msg").textContent = 'MATIC Balance: ' + myBalance;
                 });
 
                 // get a signer object so we can do things that need signing

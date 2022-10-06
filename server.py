@@ -51,7 +51,7 @@ def landing():
   return render_template("index.html")
 
 @app.route('/secret')
-@jwt_required
+@jwt_required()
 def secret():
   current_user = get_jwt_identity()
   numtokens = tokencount(current_user)

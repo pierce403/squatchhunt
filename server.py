@@ -108,7 +108,8 @@ def login():
        # account.nonce = account.generate_nonce()
        # db.session.commit()
     else:
-        abort(401, 'could not authenticate signature')
+      print("[-] oops, not legit '"+signer+"' != '"+public_address+"'")
+      return jsonify({'login': False})
 
     print("[+] OMG looks good")
 

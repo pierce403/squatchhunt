@@ -34,6 +34,14 @@ function handleAuth(accountAddress, signature)
   })
   .then((data) => {
     console.log(data);
+    if(data['login']==true)
+    {
+      document.getElementById("msg").textContent = "LOGIN SUCCESS"
+    }
+    else
+    {
+      document.getElementById("msg").textContent = "LOGIN FAILED :-("
+    }
   });
 
 }

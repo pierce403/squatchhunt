@@ -59,7 +59,7 @@ def secret():
 
   # FLAG 200
   if numtokens > 1:
-    msg="FLAG 200: "+os.environ['FLAG200']
+    msg="<br><br>FLAG 200: "+os.environ['FLAG200']
   else:
     return("Hey, do you even have any SQUATCH tokens? ")
     msg="You need more than 100 GST to view this message."

@@ -13,6 +13,7 @@ function login()
 
 rightnow = (Date.now()/1000).toFixed(0)
 sortanow = rightnow-(rightnow%600)
+console.log('[*] sortanow is '+sortanow)
 
 signer.signMessage("Signing in to "+document.domain+" at "+sortanow, accountAddress, "test password!")
             .then((signature) => {               handleAuth(accountAddress, signature)

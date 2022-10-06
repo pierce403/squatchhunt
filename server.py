@@ -96,6 +96,7 @@ def login():
 
     rightnow = int(time.time())
     sortanow = rightnow-rightnow%600
+    print("[*] sortanow is "+str(sortanow))
    
     original_message = 'Signing in to {} at {}'.format(domain,sortanow)
     print("[+] checking: "+original_message)

@@ -44,8 +44,8 @@ ethereum.enable().then(function () {
 
     
     provider.getNetwork().then(function (result) {
-        if (result['chainId'] != 1) {
-            document.getElementById("msg").textContent = 'Switch to Mainnet! '+result['chainId'];
+        if (result['chainId'] != 137) {
+            document.getElementById("msg").textContent = 'Switch to Polygon! '+result['chainId'];
 
         } else { // okay, confirmed we're on mainnet
 

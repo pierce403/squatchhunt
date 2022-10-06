@@ -51,15 +51,33 @@ class User(db.Model):
 def landing():
   return render_template("index.html")
 
-@app.route('/secret')
+@app.route('/lounge')
 @jwt_required()
 def secret():
   current_user = get_jwt_identity()
   numtokens = tokencount(current_user)
-  if numtokens > 100:
-    msg="The Galaxy is on Orion's Belt"
+
+  # FLAG 200
+  if numtokens > 1:
+    msg="FLAG 200: "+os.environ['FLAG200']
   else:
+    return("Hey, do you even have any SQUATCH tokens? ")
     msg="You need more than 100 GST to view this message."
+
+  # FLAG 300
+  if numtokens > 100:
+    msg=msg+"<br>FLAG 300: "+os.environ['FLAG300']
+  else
+    msg=msg+"<br><br>That's a good start, but you've got to pump up those rookie numbers."
+    return ("HELLO "+str(current_user)+"<br><br>"+msg)
+
+  # FLAG 400
+  if numtokens > 100000:
+    msg=msg+"<br>FLAG 400: "+os.environ['FLAG400']
+
+  # FLAG 500
+  msg=msg+"<br>FLAG 500: "+os.environ['FLAG500']
+
   return ("HELLO "+str(current_user)+" "+msg)
 
 @app.route('/login', methods=['POST'])

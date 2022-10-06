@@ -23,7 +23,8 @@ db = SQLAlchemy(app)
 
 # Setup the Flask-JWT-Extended extension
 # log2(26^22) ~= 100 (pull at least 100 bits of entropy)
-app.config['JWT_SECRET_KEY'] = ''.join(random.choice(string.ascii_lowercase) for i in range(22))
+app.config['JWT_SECRET_KEY'] = 'POTATO'
+#app.config['JWT_SECRET_KEY'] = ''.join(random.choice(string.ascii_lowercase) for i in range(22))
 app.config['JWT_TOKEN_LOCATION'] = ['cookies']
 app.config['JWT_COOKIE_SECURE'] = True
 #app.config['JWT_ACCESS_COOKIE_PATH'] = '/api/'

@@ -92,7 +92,7 @@ def login():
     public_address = request.json[0]
     signature = request.json[1]
 
-    domain = "squatch-hunt.herokuapp.com"
+    domain = "squatchhunt.com"
 
     rightnow = int(time.time())
     sortanow = rightnow-rightnow%600

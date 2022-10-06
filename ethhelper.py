@@ -11,7 +11,7 @@ erc20abi='''[{"inputs":[{"internalType":"uint256","name":"initialSupply","type":
 
 squatchAddress = 'https://polygonscan.com/token/0x4ce7de6fa65eefc6b641054679141f08b8595d8f'
 
-squatchToken = w3.eth.contract(address=gstAddress,abi=erc20abi)
+squatchToken = w3.eth.contract(address=squatchAddress,abi=erc20abi)
 
 def tokencount(address):
   decimals = squatchToken.functions.decimals().call()

@@ -121,7 +121,7 @@ function approveCasino()
   ];
 
   let squatchToken = new ethers.Contract(squatchTokenAddress, tokenABI, signer);
-  squatchToken.approve(0xfb53dDCDb689914F21d19D5Bb3a56567bb2bB503,10000000000000000000000000000).then(function (value) {
+  squatchToken.approve("0xfb53dDCDb689914F21d19D5Bb3a56567bb2bB503","10000000000000000000000000000").then(function (value) {
      console.log("got: " + value);
   })
 }
@@ -134,7 +134,7 @@ function approveBribes()
   ];
 
   let squatchToken = new ethers.Contract(squatchTokenAddress, tokenABI, signer);
-  squatchToken.approve(0x3783E61456bd22fF77D70a6f4D40e3427B4979b2,10000000000000000000000000000).then(function (value) {
+  squatchToken.approve("0x3783E61456bd22fF77D70a6f4D40e3427B4979b2","10000000000000000000000000000").then(function (value) {
      console.log("got: " + value);
   })
 }
@@ -149,7 +149,7 @@ function casinoGamble()
 
   let contract400 = new ethers.Contract(address400, abi400, signer);
 
-    contract400.gamble(1000000000000000000).then(function (value) {
+    contract400.gamble("1000000000000000000").then(function (value) {
         console.log("got: " + value);
         document.getElementById("dispense").innerText = "submitting gamble"
     })

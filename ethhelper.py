@@ -21,3 +21,7 @@ def tokencount(address):
 #print("tokens at:")
 #print(tokencount('0x7ab874Eeef0169ADA0d225E9801A3FfFfa26aAC3'))
 
+#def squatch_club(address):
+#  for i in range (1,14):
+#  
+

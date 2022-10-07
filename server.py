@@ -77,8 +77,7 @@ def secret():
   if numtokens > 1:
     msg="<br><br>FLAG 200: "+os.environ['FLAG200']
   else:
-    return("Hey, do you even have any SQUATCH tokens? ")
-    msg="You need more than 100 GST to view this message."
+    return("Hey, do you even have any SQUATCH tokens?<br>Maybe try the <a href='https://squatchhunt.com/faucet'>faucet</a>.")
 
   # FLAG 300
   if numtokens > 100:

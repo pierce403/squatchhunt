@@ -154,8 +154,37 @@ function casinoGamble()
         console.log("got: " + value);
         document.getElementById("gamble").innerText = "submitting gamble"
     })
+}
 
 
+
+function checkPrice()
+{
+  let squatchNFT = "0x3783E61456bd22fF77D70a6f4D40e3427B4979b2"
+  let nftABI = [
+    "function price(uint id) public view returns(uint lastPrice)",
+  ];
+
+  let nftContract = new ethers.Contract(squatchNFT, nftABI, signer);
+
+  nftContract.price(document.getElementById('squatch').value).then(function (value) {
+        console.log("got: " + value);
+        document.getElementById("price").innerText = Integer(value)*2
+  })
+}
+
+function lureSquatch()
+{
+  let squatchNFT = "0x3783E61456bd22fF77D70a6f4D40e3427B4979b2"
+  let nftABI = [
+    "function bribe(uint id) public",
+  ];
+
+  let nftContract = new ethers.Contract(squatchNFT, nftABI, signer);
+
+  nftContract.bribe(document.getElementById('squatch').value).then(function (value) {
+        console.log("got: " + value);
+  })
 }
 
 

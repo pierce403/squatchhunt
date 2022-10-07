@@ -18,6 +18,6 @@ def tokencount(address):
   
   return int(squatchToken.functions.balanceOf(address).call())/10**decimals
 
-print("tokens at:")
-print(tokencount('0x7ab874Eeef0169ADA0d225E9801A3FfFfa26aAC3'))
+#print("tokens at:")
+#print(tokencount('0x7ab874Eeef0169ADA0d225E9801A3FfFfa26aAC3'))
 

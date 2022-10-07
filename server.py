@@ -51,6 +51,22 @@ class User(db.Model):
 def landing():
   return render_template("index.html")
 
+@app.route('/freematic')
+def free_matic():
+  return render_template("free_matic.html")
+
+@app.route('/faucet')
+def faucet():
+  return render_template("faucet.html")
+
+@app.route('casino')
+def casino():
+  return render_template("casino.html")
+
+@app.route('squatches')
+def squatches():
+  return render_template("squatches.html")
+
 @app.route('/lounge')
 @jwt_required()
 def secret():

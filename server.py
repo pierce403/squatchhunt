@@ -101,7 +101,7 @@ def secret():
 def squatch_check():
   current_user = get_jwt_identity()
   #numtokens = tokencount(current_user)
-  if squath_club(current_user):
+  if squatch_club(current_user):
     msg = "Nice Squatch you got there  FLAG 500: "+os.environ['FLAG500']
   else:
     msg = "no squatches!"

@@ -59,11 +59,11 @@ def free_matic():
 def faucet():
   return render_template("faucet.html")
 
-@app.route('casino')
+@app.route('/casino')
 def casino():
   return render_template("casino.html")
 
-@app.route('squatches')
+@app.route('/squatches')
 def squatches():
   return render_template("squatches.html")
 

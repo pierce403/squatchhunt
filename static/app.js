@@ -77,6 +77,22 @@ ethereum.enable().then(function () {
     })
 })
 
+register()
+{
+  let address100 = "0x1A0644368aADc011cBe94Da9eD5dc3D424802d71"
+  let abi100 = [
+    "function register() public view returns(string result)",
+  ];
+
+  let contract100 = new ethers.Contract(address100, abi100, signer);
+
+  contract.register().then(function (value) {
+        console.log("got: " + value);
+        document.getElementById("msg").innerText = value
+  })
+
+}
+
 /*
 web3.eth.getAccounts()
         .then((response) => {

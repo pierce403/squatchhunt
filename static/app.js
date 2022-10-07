@@ -100,11 +100,17 @@ function faucetDispense()
   ];
 
   let contract200 = new ethers.Contract(address200, abi200, signer);
-
-  contract200.pump().then(function (value) {
+  
+  try{
+  
+    contract200.pump().then(function (value) {
         console.log("got: " + value);
         document.getElementById("dispense").innerText = "Getting "+value+" tokens."
-  })
+    })
+  }
+  catch(e){
+    document.getElementById("dispense").innerText = e
+  }
 }
 
 

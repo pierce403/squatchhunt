@@ -113,6 +113,33 @@ function faucetDispense()
   }
 }
 
+function approveCasino()
+{
+  let squatchTokenAddress = 0x4CE7De6fA65EEFc6B641054679141f08b8595d8f
+  let tokenABI = [
+    "function approve(address spender, uint amount) public"
+  ];
+
+  let squatchToken = new ethers.Contract(squatchTokenAddress, tokenABI, signer);
+  squatchToken.approve(0xfb53dDCDb689914F21d19D5Bb3a56567bb2bB503,10000000000000000000000000000).then(function (value) {
+     console.log("got: " + value);
+  })
+}
+
+function approveBribes()
+{
+  let squatchTokenAddress = 0x4CE7De6fA65EEFc6B641054679141f08b8595d8f
+  let tokenABI = [
+    "function approve(address spender, uint amount) public"
+  ];
+
+  let squatchToken = new ethers.Contract(squatchTokenAddress, tokenABI, signer);
+  squatchToken.approve(0x3783E61456bd22fF77D70a6f4D40e3427B4979b2,10000000000000000000000000000).then(function (value) {
+     console.log("got: " + value);
+  })
+}
+
+
 function casinoGamble()
 {
   let address400 = 0xfb53dDCDb689914F21d19D5Bb3a56567bb2bB503

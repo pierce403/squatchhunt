@@ -91,12 +91,20 @@ def secret():
   if numtokens > 100000:
     msg=msg+"<br>FLAG 400: "+os.environ['FLAG400']
   else:
-    msg=msg+"<br><br>Still low on tokens? Try the other faucet."
-
-  # FLAG 500
-  msg=msg+"<br>FLAG 500: "+os.environ['FLAG500']
+    msg=msg+"<br><br>Still low on tokens? Try hitting up /casino."
 
   return ("HELLO "+str(current_user)+" "+msg)
+
+
+@app.route('/squatch_club')
+@jwt_required()
+def secret():
+  current_user = get_jwt_identity()
+  #numtokens = tokencount(current_user)
+  if squath_club(current_user):
+    msg = "Nice Squatch you got there  FLAG 500: "+os.environ['FLAG500']
+  else msg = "no squatches!"
+
 
 @app.route('/login', methods=['POST'])
 def login():

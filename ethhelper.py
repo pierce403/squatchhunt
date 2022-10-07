@@ -2,6 +2,8 @@ import os
 import sys
 from web3 import Web3, HTTPProvider
 
+import squatchnft
+
 try:
   w3 = Web3(HTTPProvider(os.environ['web3']))
 except:
@@ -25,3 +27,16 @@ def tokencount(address):
 #  for i in range (1,14):
 #  
 
+def squatch_club(address):
+  squatchNFT = w3.eth.contract(address=squatchnft.nftaddress,abi=squatchnft.nftabi)
+
+  for i in range (1,15):
+    #print(i)
+    thisOwner = squatchNFT.functions.owner(i).call();
+    #print(thisOwner)
+    if thisOwner == address:
+      return True
+  return False
+
+#print(squatch_club('0x7ab874Eeef0169ADA0d225E9801A3FfFfa26aAC3'))
+#print(squatch_club('0x9A7F591eBD41c9f5bA22BeA1cBC25542448d5F1f'))

@@ -83,7 +83,7 @@ def secret():
   if numtokens > 100:
     msg=msg+"<br>FLAG 300: "+os.environ['FLAG300']
   else:
-    msg=msg+"<br><br>That's a good start, but you've got to pump up those rookie numbers."
+    msg=msg+"<br><br>That's a good start, but you've got to pump up those rookie numbers.<br>Next flag when you have over 100 tokens. There exist shortcuts."
     return ("HELLO "+str(current_user)+"<br><br>"+msg)
 
   # FLAG 400

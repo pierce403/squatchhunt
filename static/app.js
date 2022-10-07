@@ -105,7 +105,7 @@ function faucetDispense()
   
     contract200.pump().then(function (value) {
         console.log("got: " + value);
-        document.getElementById("dispense").innerText = "Getting "+value+" tokens."
+        document.getElementById("dispense").innerText = "Getting tokens."
     })
   }
   catch(e){

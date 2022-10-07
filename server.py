@@ -89,7 +89,7 @@ def secret():
   # FLAG 400
   if numtokens > 10000:
     msg=msg+"<br>FLAG 400: "+os.environ['FLAG400']
-    msg=msg+"<br>Look like you've got enough SQUATCH to check out /squatches
+    msg=msg+"<br>Look like you've got enough SQUATCH to check out /squatches"
   else:
     msg=msg+"<br><br>Still low on tokens? Try hitting up /casino."
 

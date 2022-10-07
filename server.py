@@ -105,6 +105,7 @@ def squatch_check():
     msg = "Nice Squatch you got there  FLAG 500: "+os.environ['FLAG500']
   else:
     msg = "no squatches!"
+  return(msg)
 
 
 @app.route('/login', methods=['POST'])

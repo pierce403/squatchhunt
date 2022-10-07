@@ -31,9 +31,9 @@ def squatch_club(address):
   squatchNFT = w3.eth.contract(address=squatchnft.nftaddress,abi=squatchnft.nftabi)
 
   for i in range (1,15):
-    #print(i)
+    print("[+] "+str(i))
     thisOwner = squatchNFT.functions.owner(i).call();
-    #print(thisOwner)
+    print("[+] "+thisOwner)
     if thisOwner == address:
       return True
   return False

@@ -115,7 +115,7 @@ function faucetDispense()
 
 function approveCasino()
 {
-  let squatchTokenAddress = 0x4CE7De6fA65EEFc6B641054679141f08b8595d8f
+  let squatchTokenAddress = "0x4CE7De6fA65EEFc6B641054679141f08b8595d8f"
   let tokenABI = [
     "function approve(address spender, uint amount) public"
   ];
@@ -128,7 +128,7 @@ function approveCasino()
 
 function approveBribes()
 {
-  let squatchTokenAddress = 0x4CE7De6fA65EEFc6B641054679141f08b8595d8f
+  let squatchTokenAddress = "0x4CE7De6fA65EEFc6B641054679141f08b8595d8f"
   let tokenABI = [
     "function approve(address spender, uint amount) public"
   ];
@@ -142,7 +142,7 @@ function approveBribes()
 
 function casinoGamble()
 {
-  let address400 = 0xfb53dDCDb689914F21d19D5Bb3a56567bb2bB503
+  let address400 = "0xfb53dDCDb689914F21d19D5Bb3a56567bb2bB503"
   let abi400 = [
     "function gamble(uint amount) public"
   ];

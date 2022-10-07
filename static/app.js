@@ -36,11 +36,11 @@ function handleAuth(accountAddress, signature)
     console.log(data);
     if(data['login']==true)
     {
-      document.getElementById("msg").textContent = "LOGIN SUCCESS"
+      document.getElementById("login").textContent = "LOGIN SUCCESS"
     }
     else
     {
-      document.getElementById("msg").textContent = "LOGIN FAILED :-("
+      document.getElementById("login").textContent = "LOGIN FAILED :-("
     }
   });
 
@@ -90,8 +90,24 @@ function register()
         console.log("got: " + value);
         document.getElementById("flag").innerText = value
   })
-
 }
+
+function faucetDispense()
+{
+  let address200 = "0x579D35EDe5C92d2855F86fd60Fac057feE015Ec3"
+  let abi200 = [
+    "function pump() public returns(uint haul)",
+  ];
+
+  let contract200 = new ethers.Contract(address200, abi200, signer);
+
+  contract200.register().then(function (value) {
+        console.log("got: " + value);
+        document.getElementById("flag").innerText = "Getting "+value+" tokens."
+  })
+}
+
+
 
 /*
 web3.eth.getAccounts()

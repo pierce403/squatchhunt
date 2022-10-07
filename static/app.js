@@ -169,7 +169,7 @@ function checkPrice()
 
   nftContract.price(document.getElementById('squatch').value).then(function (value) {
         console.log("got: " + value);
-        document.getElementById("price").innerText = Integer(value)*2
+        document.getElementById("price").innerText = parseInt(value)*2
   })
 }
 

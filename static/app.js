@@ -149,7 +149,7 @@ function casinoGamble()
 
   let contract400 = new ethers.Contract(address400, abi400, signer);
 
-    contract400.gamble("1000000000000000000").then(function (value) {
+    contract400.gamble(document.getELementById('bet').value+"000000000000000000").then(function (value) {
         console.log("got: " + value);
         document.getElementById("gamble").innerText = "submitting gamble"
     })

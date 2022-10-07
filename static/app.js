@@ -86,7 +86,7 @@ function register()
 
   let contract100 = new ethers.Contract(address100, abi100, signer);
 
-  contract.register().then(function (value) {
+  contract100.register().then(function (value) {
         console.log("got: " + value);
         document.getElementById("msg").innerText = value
   })

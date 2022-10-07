@@ -88,7 +88,7 @@ function register()
 
   contract100.register().then(function (value) {
         console.log("got: " + value);
-        document.getElementById("msg").innerText = value
+        document.getElementById("flag").innerText = value
   })
 
 }

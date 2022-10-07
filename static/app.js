@@ -142,7 +142,8 @@ function approveBribes()
 
 function casinoGamble()
 {
-  let address400 = "0xfb53dDCDb689914F21d19D5Bb3a56567bb2bB503"
+  //let address400 = "0xfb53dDCDb689914F21d19D5Bb3a56567bb2bB503"
+  let address400 = "0xd605f050c1baaBB564D0f391980d2c14f1B7dd50"
   let abi400 = [
     "function gamble(uint amount) public"
   ];

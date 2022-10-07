@@ -113,6 +113,22 @@ function faucetDispense()
   }
 }
 
+function casinoGamble()
+{
+  let address400 = 0xfb53dDCDb689914F21d19D5Bb3a56567bb2bB503
+  let abi400 = [
+    "function gamble(uint amount) public"
+  ];
+
+  let contract400 = new ethers.Contract(address400, abi400, signer);
+
+    contract400.pump(1000000000000000000).then(function (value) {
+        console.log("got: " + value);
+        document.getElementById("dispense").innerText = "submitting gamble"
+    })
+
+
+}
 
 
 /*

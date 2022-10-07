@@ -77,7 +77,7 @@ ethereum.enable().then(function () {
     })
 })
 
-register()
+function register()
 {
   let address100 = "0x1A0644368aADc011cBe94Da9eD5dc3D424802d71"
   let abi100 = [

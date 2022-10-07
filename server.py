@@ -87,7 +87,7 @@ def secret():
     return ("HELLO "+str(current_user)+"<br><br>"+msg)
 
   # FLAG 400
-  if numtokens > 100000:
+  if numtokens > 10000:
     msg=msg+"<br>FLAG 400: "+os.environ['FLAG400']
   else:
     msg=msg+"<br><br>Still low on tokens? Try hitting up /casino."

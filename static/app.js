@@ -151,7 +151,7 @@ function casinoGamble()
 
     contract400.gamble("1000000000000000000").then(function (value) {
         console.log("got: " + value);
-        document.getElementById("dispense").innerText = "submitting gamble"
+        document.getElementById("gamble").innerText = "submitting gamble"
     })
 
 

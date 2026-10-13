@@ -1,10 +1,13 @@
 import {cpSync,mkdirSync,readFileSync,writeFileSync} from 'node:fs';
 import {execFileSync} from 'node:child_process';
 mkdirSync('build/assets/static',{recursive:true});cpSync('static','build/assets/static',{recursive:true});
+const commit=execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim();
 cpSync('node_modules/ethers/dist/ethers.umd.min.js','build/assets/static/ethers-v4.min.js');
 for(const [file,path] of [['index','index.html'],['free_matic','freematic.html'],['faucet','faucet.html'],['casino','casino.html'],['squatches','squatches.html']]) {
   let html=readFileSync(`templates/${file}.html`,'utf8');
   if(html.includes('static/app.js'))html=html.replace('<script src="static/ethers-v4.min.js">','<button onclick="connectWallet()">CONNECT WALLET</button><script src="static/ethers-v4.min.js">');
+  html=html.replace('Please Enable Javascript','Connect your wallet to continue.');
+  html=html.replaceAll('src="static/ethers-v4.min.js"',`src="static/ethers-v4.min.js?v=${commit}"`).replaceAll('src="static/app.js"',`src="static/app.js?v=${commit}"`);
   writeFileSync('build/assets/'+path,html);
 }
 let js=readFileSync('static/app.js','utf8');
@@ -26,6 +29,7 @@ js=js.slice(0,start)+`async function connectWallet() {
 \n`+js.slice(end);
 js=js.replace('(Date.now()/1000).toFixed(0)','Math.floor(Date.now()/1000)');
 js=js.replace(', accountAddress, "test password!")',')');
+js=js.replace('  console.log(signature);','');
 writeFileSync('build/assets/static/app.js',js);
-writeFileSync('build/assets/deployment.json',JSON.stringify({repository:'pierce403/squatchhunt',commit:execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim(),originalHerokuCommit:'548151cf393768f16e3b884fde8bd0e768b24e02'})+'\n');
+writeFileSync('build/assets/deployment.json',JSON.stringify({repository:'pierce403/squatchhunt',commit,originalHerokuCommit:'548151cf393768f16e3b884fde8bd0e768b24e02'})+'\n');
 writeFileSync('build/assets/_headers','/deployment.json\n  Cache-Control: no-store\n');

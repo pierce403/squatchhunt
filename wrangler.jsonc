@@ -4,5 +4,6 @@
  "assets":{"directory":"build/assets","binding":"ASSETS","run_worker_first":true,"not_found_handling":"none"},
  "vars":{"AUTH_DOMAIN":"squatchhunt.com"},
  "observability":{"enabled":true,"traces":{"enabled":true}},
- "env":{"staging":{"name":"squatch-hunt-staging","preview_urls":false,"vars":{"AUTH_DOMAIN":"squatch-hunt-staging.bcrt43.workers.dev"}}}
+ "env":{"staging":{"name":"squatch-hunt-staging","preview_urls":false,"routes":[],"vars":{"AUTH_DOMAIN":"squatch-hunt-staging.bcrt43.workers.dev"}}},
+ "routes":[{"pattern":"squatchhunt.com/*","zone_name":"squatchhunt.com"}]
 }
